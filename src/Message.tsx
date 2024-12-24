@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import VanillaTilt from "vanilla-tilt";
-import sunflowerSrc from './assets/sunflower.jpeg'
+import sunflowerSrc from './assets/sunflower.avif'
 
 interface Props {
   open: boolean;
