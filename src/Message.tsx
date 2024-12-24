@@ -27,7 +27,7 @@ export const Message: React.FC<Props> = (props) => {
 
   return (
     <div ref={ref} className="absolute inset-2 md:inset-8 z-10 bg-[#efe4da] p-5 flex justify-between items-center font-oswald shadow-md">
-      <img src={sunflowerSrc} className="h-full py-10" />
+      <img loading="lazy" src={sunflowerSrc} className="h-full py-10" />
       <div className="text-black flex flex-col gap-4 md:gap-8 items-center text-[10px] sm:text-xs md:text-sm">
         <h1 className="font-great-vibe text-lg md:text-6xl">Андрій та Анна</h1>
         <p className="text-balance text-center font-oswald max-w-[200px] md:max-w-[400px] uppercase">Ми запрошуємо вас розділити з нами важливий день у нашому житті</p>
