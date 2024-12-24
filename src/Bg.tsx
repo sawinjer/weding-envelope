@@ -1,7 +1,7 @@
 export const Bg: React.FC = () => {
   return (
     <div className="fixed top-0 h-screen w-full z-[-1]">
-      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" className="min-w-full min-h-full">
         <defs>
           <filter id="b" x="-500" y="-500" width="2000" height="2000" filterUnits="userSpaceOnUse">
             <feGaussianBlur in="SourceGraphic" stdDeviation="80" />
