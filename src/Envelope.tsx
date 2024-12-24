@@ -2,7 +2,6 @@ import * as motion from "motion/react-client";
 import { useBoolean } from "./hooks/useBoolean";
 import { useState } from "react";
 import { Message } from "./Message";
-import VanillaTilt from "vanilla-tilt";
 
 const DURATION = 1.5;
 const EASE = "easeIn";
@@ -15,17 +14,8 @@ export const Envelope: React.FC = () => {
     setEnvelopeY(window.innerHeight + 250);
   };
 
-  const attachTilt = (el: HTMLDivElement | null) => {
-    if (!el) {
-      return;
-    }
-
-    VanillaTilt.init(el)
-  }
-
   return (
     <motion.div
-      ref={attachTilt}
       onClick={open.setTrue}
       className="max-w-[800px] max-h-[500px] aspect-[8/5] w-full relative rounded-md"
       initial={{
