@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import VanillaTilt from "vanilla-tilt";
 import sunflowerSrc from './assets/sunflower.avif'
+import { attachVanilaTilt } from "./attachVanilaTilt";
 
 interface Props {
   open: boolean;
@@ -17,10 +17,14 @@ export const Message: React.FC<Props> = (props) => {
       return;
     }
 
-    VanillaTilt.init(el, { glare: true });
+    attachVanilaTilt(el);
 
     return () => {
-      (el as any).vanillaTilt.destroy();
+      const tilt = (el as any).vanillaTilt;
+
+      if (typeof tilt !== 'undefined') {
+        tilt.destroy();
+      }
     };
   });
 
