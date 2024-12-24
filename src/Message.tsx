@@ -17,7 +17,7 @@ export const Message: React.FC<Props> = (props) => {
       return;
     }
 
-    VanillaTilt.init(el);
+    VanillaTilt.init(el, { glare: true });
 
     return () => {
       (el as any).vanillaTilt.destroy();
@@ -26,7 +26,7 @@ export const Message: React.FC<Props> = (props) => {
 
 
   return (
-    <div ref={ref} className="absolute inset-2 md:inset-8 z-10 bg-[#efe4da] p-5 flex justify-between items-center font-oswald">
+    <div ref={ref} className="absolute inset-2 md:inset-8 z-10 bg-[#efe4da] p-5 flex justify-between items-center font-oswald shadow-md">
       <img src={sunflowerSrc} className="h-full py-10" />
       <div className="text-black flex flex-col gap-4 md:gap-8 items-center text-[10px] sm:text-xs md:text-sm">
         <h1 className="font-great-vibe text-lg md:text-6xl">Андрій та Анна</h1>
@@ -35,7 +35,11 @@ export const Message: React.FC<Props> = (props) => {
           <span>Неділя</span>
           <div className="flex flex-col items-center">
             <span>Серпень</span>
-            <span className="md:text-4xl border border-l-black border-r-black px-4">17</span>
+            <div className="flex gap-4 items-center">
+              <span className="h-[22px] w-[1px] bg-black" />
+              <span className="md:text-4xl border">17</span>
+              <span className="h-[22px] w-[1px] bg-black" />
+            </div>
             <span>2024</span>
           </div>
           <span>о 12:30 год</span>

@@ -2,6 +2,7 @@ import * as motion from "motion/react-client";
 import { useBoolean } from "./hooks/useBoolean";
 import { useState } from "react";
 import { Message } from "./Message";
+import VanillaTilt from "vanilla-tilt";
 
 const DURATION = 1.5;
 const EASE = "easeIn";
@@ -14,8 +15,17 @@ export const Envelope: React.FC = () => {
     setEnvelopeY(window.innerHeight + 250);
   };
 
+  const attachTilt = (el: HTMLDivElement | null) => {
+    if (!el) {
+      return;
+    }
+
+    VanillaTilt.init(el)
+  }
+
   return (
     <motion.div
+      ref={attachTilt}
       onClick={open.setTrue}
       className="max-w-[800px] max-h-[500px] aspect-[8/5] w-full relative rounded-md"
       initial={{
@@ -33,7 +43,6 @@ export const Envelope: React.FC = () => {
           },
         },
         hovering: {
-          scale: [1, 1.05, 1],
           rotateX: 0,
           rotateZ: 0,
           translateY: 0,
@@ -81,7 +90,7 @@ const EnvelopCover: React.FC<{
     >
       <svg viewBox="0 0 80 50" className="w-full h-full">
         <title>Envelope cover</title>
-        <polygon points="0,0 80,0 40,25" fill="#304539" />
+        <polygon points="0,0 80,0 40,27" fill="#304539" />
       </svg>
     </motion.div>
   );
