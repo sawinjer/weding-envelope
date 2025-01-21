@@ -40,7 +40,7 @@ export const Message: React.FC<Props> = (props) => {
               <span className="md:text-4xl border">17</span>
               <span className="h-[22px] w-[1px] bg-black" />
             </div>
-            <span>2024</span>
+            <span>2025</span>
           </div>
           <span>о 12:30 год</span>
         </div>
